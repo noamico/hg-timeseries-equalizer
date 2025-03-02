@@ -53,11 +53,10 @@ class TimeseriesNormalizer:
             if not measure_time.minute in [0,30] and len(current_bucket) == 0:
                 continue
             if measure_time.minute in [0,30] and len(current_bucket) > 0:
-                if data_point['timestamp'] == timeseries_list[-1]['timestamp']: # if is the last item push it also to current bucket
-                    current_bucket.append(data_point)
-                    buckets.append(current_bucket.copy())
-                else:
-                    buckets.append(current_bucket.copy())
+                current_bucket.append(data_point)
+                buckets.append(current_bucket.copy())
+                # if it`s not the last item next bucket should start with this point
+                if data_point['timestamp'] != timeseries_list[-1]['timestamp']:
                     current_bucket = [data_point]
                 continue
             current_bucket.append(data_point)

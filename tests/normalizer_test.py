@@ -81,7 +81,7 @@ class TestNormalizer(IsolatedAsyncioTestCase):
         self.assertEqual(result.timeseries[0].timestamp, 1581609600000)
         self.assertEqual(result.timeseries[0].value, 0.2)
         self.assertEqual(result.timeseries[1].timestamp, 1581611400000)
-        #self.assertEqual(result.timeseries[1].value, 3.0) # TODO: fix this case
+        self.assertEqual(result.timeseries[1].value, 3.0)
         self.assertEqual(result.timeseries[2].timestamp, 1581613200000)
         self.assertEqual(result.timeseries[2].value, 9.0)
 

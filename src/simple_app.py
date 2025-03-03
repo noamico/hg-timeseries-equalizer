@@ -4,8 +4,6 @@ import asyncio
 from src.normalizer.timeseries_normalizer import TimeseriesNormalizer
 from src.normalizer.turbine_power_data_types import TurbinePowerDataPoints, PowerTimeSeries, PowerUnit
 
-def obj_to_dict(obj):
-    return obj.__dict__
 
 async def generate_result(json_path: str):
     with open(json_path) as f:

@@ -23,3 +23,11 @@ result = await normalizer.normalize(input_data)
 python simple_app.py <PATH TO INPUT JSON FILE>
 ```
 this will override the results.json file in the output folder
+
+## Running the kafka app
+
+Still not completed but in general: 
+1. run the docker compose in order to have a local kafka container 
+2. set an input topic for the app
+3. Run the kafka.app file
+4. Publish a message to the input topic with the IDE tool or with a simple producer script

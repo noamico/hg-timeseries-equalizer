@@ -1,4 +1,3 @@
-import ast
 import json
 from datetime import datetime
 from src.normalizer.turbine_power_data_types import TurbinePowerDataPoints, PowerTimeSeries
@@ -19,7 +18,6 @@ class TimeseriesNormalizer:
         if not timeseries:
             raise Exception('Missing timeseries in input')
 
-        #timeseries_list = ast.literal_eval(data['timeseries'])
         timestamps = [x.timestamp for x in data.timeseries]
         if len(timestamps) != len(set(timestamps)):
             raise Exception('Duplicate timestamps found in input')
